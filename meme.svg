@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="300" viewBox="0 0 720 300">
+  <style>
+    .bg{fill:#0f172a}
+    .card{fill:#ffffff;stroke:#e2e8f0;stroke-width:1}
+    .title{font-family:Impact, Arial, sans-serif; font-size:28px; fill:#0f172a}
+    .caption{font-family:Arial, Helvetica, sans-serif; font-size:16px; fill:#334155}
+  </style>
+  <rect class="bg" width="100%" height="100%"/>
+  <g transform="translate(20,20)">
+    <rect class="card" x="0" y="0" rx="8" width="680" height="260"/>
+    <text class="title" x="18" y="48">When you ask the bot for weather:</text>
+    <text class="caption" x="18" y="96">User: "What's the weather in Tokyo?"</text>
+    <text class="caption" x="18" y="132">Assistant: *plans → calls get_weather* ☁️☀️</text>
+    <text class="caption" x="18" y="168">Tool: returns "15°C, Partly cloudy"</text>
+    <text class="caption" x="18" y="210">Meme: Expectation — poetic forecast. Reality — precise temp. 🤖🌤️</text>
+  </g>
+</svg>
