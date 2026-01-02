@@ -1,7 +1,7 @@
 import json
 import requests
 from groq import Groq
-
+import os
 from dotenv import load_dotenv
 import os
 
@@ -24,10 +24,22 @@ def get_weather(city: str):
 
     return f"{temp}°C, {desc}"
 
+
+def run_command(command):
+     result = os.system(command=command)
+     return result
+
+# print(run_command("dir"))
+
+
 available_tool = {
     "get_weather":{
         "fn":get_weather,
         "description":"Takes a city name as an input and returns the current weather for the city"
+    },
+    "run_command":{
+         "fn":run_command,
+         "description":"Take a command as input to execute on system and returns output"
     }
 }
 
@@ -56,7 +68,7 @@ system_prompt = """
 
     Available Tools:
     -get_weather : Takes a city name as an input and returns the current weather for the city
-
+    -run_command : Take a command as input to execute on system and returns output
     Example:
     User Query: What is the weather of new york?
     Output: {{"steps": "plan","content" : "The user is interested int he weather data of new york"}}
@@ -109,4 +121,4 @@ while True:
                     
 
         if user_query=='bye' or user_query=='done':
-            break
+            continue
