@@ -74,37 +74,39 @@ messages = [
     {"role":"system","content":system_prompt}
 ]
 
-user_query = input('> ')
-messages.append({"role":"user","content":user_query})
-while(True):
-    response = client.chat.completions.create(
-    model="llama-3.3-70b-versatile",
-    response_format={"type":"json_object"},
-    messages=messages
-    )
-    
-    parsed_output = json.loads(response.choices[0].message.content)
-    messages.append({"role":"assistant","content":json.dumps(parsed_output)})
+while True:
 
-    if parsed_output.get("step") == "plan":
-        print(f"🧠: {parsed_output.get('content')}")
-        continue
+    user_query = input('> ')
+    messages.append({"role":"user","content":user_query})
 
-    if parsed_output.get("step") == "action":
-        tool_name = parsed_output.get("function")
-        tool_input = parsed_output.get("input")
 
-        if available_tool .get(tool_name,False)!=False:
-            output = available_tool[tool_name].get("fn")(tool_input)
-            messages.append({"role":"assistant","content":json.dumps({"step":"observer","output":output})})
+    while(True):
+        response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        response_format={"type":"json_object"},
+        messages=messages
+        )
+        
+        parsed_output = json.loads(response.choices[0].message.content)
+        messages.append({"role":"assistant","content":json.dumps(parsed_output)})
+
+        if parsed_output.get("step") == "plan":
+            print(f"🧠: {parsed_output.get('content')}")
             continue
-    
-    if parsed_output.get("step") == "output":
-                print(f"🤖: {parsed_output.get('content')}")
-                break
-                
 
+        if parsed_output.get("step") == "action":
+            tool_name = parsed_output.get("function")
+            tool_input = parsed_output.get("input")
 
+            if available_tool .get(tool_name,False)!=False:
+                output = available_tool[tool_name].get("fn")(tool_input)
+                messages.append({"role":"assistant","content":json.dumps({"step":"observer","output":output})})
+                continue
+        
+        if parsed_output.get("step") == "output":
+                    print(f"🤖: {parsed_output.get('content')}")
+                    break
+                    
 
-
-## chain thought in t.txt  above are organized automated type
+        if user_query=='bye' or user_query=='done':
+            break
