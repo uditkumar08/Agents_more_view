@@ -85,7 +85,7 @@ client = Groq(
 messages = [
     {"role":"system","content":system_prompt}
 ]
-
+ 
 while True:
 
     user_query = input('> ')
