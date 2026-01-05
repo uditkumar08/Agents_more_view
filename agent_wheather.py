@@ -7,7 +7,7 @@ import os
 
 load_dotenv()
 
-def get_weather(city: str):
+def get_weather(city: str):  
     print(f"Tool called: get_weather({city})")
 
     url = f"https://wttr.in/{city}?format=j1"
