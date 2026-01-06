@@ -57,6 +57,11 @@ This performs an HTTP query to `wttr.in` and prints a short summary like `7°C, 
 ## Contributing
 Suggestions, fixes, and pull requests are welcome. Please open an issue if you find incorrect behavior or want to propose features.
 
+## Fun image
+Enjoy a tiny mascot to brighten the README:
+
+![Fun mascot](assets/fun.svg)
+
 ---
 Updated README to reflect the current project layout and quickstart instructions.
 

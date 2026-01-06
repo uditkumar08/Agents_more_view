@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="240" viewBox="0 0 600 240">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#87CEEB"/>
+      <stop offset="100%" stop-color="#B0E0E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#sky)" rx="12"/>
+
+  <!-- Sun -->
+  <g transform="translate(480,60)">
+    <circle cx="0" cy="0" r="36" fill="#FFD54F" stroke="#FFB300" stroke-width="4"/>
+    <!-- Rays -->
+    <g stroke="#FFB300" stroke-width="3" stroke-linecap="round">
+      <line x1="-60" y1="0" x2="-100" y2="0" />
+      <line x1="60" y1="0" x2="100" y2="0" />
+      <line x1="0" y1="-60" x2="0" y2="-100" />
+      <line x1="0" y1="60" x2="0" y2="100" />
+      <line x1="-42" y1="-42" x2="-72" y2="-72" />
+      <line x1="42" y1="-42" x2="72" y2="-72" />
+      <line x1="-42" y1="42" x2="-72" y2="72" />
+      <line x1="42" y1="42" x2="72" y2="72" />
+    </g>
+  </g>
+
+  <!-- Cloud with smile -->
+  <g transform="translate(160,110)">
+    <ellipse cx="0" cy="0" rx="110" ry="40" fill="#FFFFFF" />
+    <ellipse cx="-80" cy="-10" rx="50" ry="30" fill="#FFFFFF" />
+    <ellipse cx="-30" cy="-30" rx="40" ry="26" fill="#FFFFFF" />
+    <ellipse cx="40" cy="-20" rx="56" ry="34" fill="#FFFFFF" />
+    <ellipse cx="90" cy="-8" rx="36" ry="22" fill="#FFFFFF" />
+    <!-- Eyes -->
+    <circle cx="-30" cy="-2" r="6" fill="#37474F" />
+    <circle cx="10" cy="-2" r="6" fill="#37474F" />
+    <!-- Smile -->
+    <path d="M -40 12 Q -15 34 10 12" stroke="#37474F" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Text -->
+  <text x="32" y="210" font-family="Segoe UI, Arial" font-size="18" fill="#023047">Have a bright weather day! ☀️</text>
+</svg>
